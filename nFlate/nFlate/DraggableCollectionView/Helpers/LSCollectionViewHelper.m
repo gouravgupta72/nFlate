@@ -219,6 +219,24 @@ typedef NS_ENUM(NSInteger, _ScrollingDirection) {
 
 - (void)handleLongPressGesture:(UILongPressGestureRecognizer *)sender
 {
+    for (id id_viewTable in self.collectionView.superview.subviews)
+    {
+        UIView *view1=(UIView*)id_viewTable;
+        if(view1.tag==20)
+        {
+           for(id id_view2 in view1.subviews)
+           {
+                UIView *view3=(UIView*)id_view2;
+                if (view3.tag==10)
+                {
+                    view3.hidden=true;
+                }
+            }
+        }
+    }
+    [self.collectionView.superview bringSubviewToFront:self.collectionView];
+    
+    
     if (sender.state == UIGestureRecognizerStateChanged) {
         return;
     }

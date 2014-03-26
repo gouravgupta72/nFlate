@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "loadingView.h"
+#import "LoadingView.h"
 //#import "loading.h"
 
 @interface nFlateAppDelegate : UIResponder <UIApplicationDelegate>
 {
     BOOL isInternetAvailable;
-    loadingView *lview;
+    LoadingView *lview;
     
     NSManagedObjectModel *managedObjectModel;
     NSManagedObjectContext *managedObjectContext;
@@ -26,7 +26,7 @@
 
 - (NSString *)applicationDocumentsDirectory;
 
-@property (nonatomic, retain) loadingView *lview;
+@property (nonatomic, retain) LoadingView *lview;
 
 @property (strong, nonatomic) UIWindow *window;
 +(nFlateAppDelegate *)sharedAppDelegate;

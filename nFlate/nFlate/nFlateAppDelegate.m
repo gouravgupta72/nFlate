@@ -7,14 +7,15 @@
 //
 
 #import "nFlateAppDelegate.h"
-
+#import "LoadingView.h"
 @implementation nFlateAppDelegate
 @synthesize lview,managedObjectContext,managedObjectModel,persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    self.lview=[[loadingView alloc]initWithMyFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width,  [[UIScreen mainScreen] bounds].size.height)];
+    self.lview=[[LoadingView alloc] initWithCustomFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width,  [[UIScreen mainScreen] bounds].size.height)];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(handleDidChangeStatusBarOrientationNotification:)
                                                  name:UIApplicationDidChangeStatusBarOrientationNotification
@@ -22,13 +23,12 @@
     return YES;
 }
 
-
 - (void)handleDidChangeStatusBarOrientationNotification:(NSNotification *)notification;
 {
     // Do something interesting
     NSLog(@"The orientation is %@", [notification.userInfo objectForKey: UIApplicationStatusBarOrientationUserInfoKey]);
     
-    [self.lview rotation:[notification.userInfo objectForKey: UIApplicationStatusBarOrientationUserInfoKey]];
+    [self.lview rotation];
 }
 
 -(BOOL)shouldAutorotate
@@ -101,8 +101,8 @@
     if ([self.lview isDescendantOfView:self.window]) {
         [self.lview removeFromSuperview];
     }
-    self.lview.lblMsg.text=@"Loading...";
-    [self.lview.activityIndicator startAnimating];
+   // self.lview.lblMsg.text=@"Loading...";
+  //  [self.lview.activityIndicator startAnimating];
     [self.window addSubview:self.lview];
 }
 // method use for remove loading view

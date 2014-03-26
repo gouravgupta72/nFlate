@@ -25,7 +25,6 @@
 #pragma mark Response/Request Method
 -(void)getError:(id)error
 {
-    
 }
 
 -(void)getResult:(id)jsonData
@@ -73,8 +72,53 @@
     [req request:@"" Parameter:[@"http://hwsdemos.com/nFlate/getSchema.php" stringByAddingPercentEscapesUsingEncoding:NSStringEncodingConversionAllowLossy]];
 }
 
-- (IBAction)saveViewAction:(id)sender
+- (IBAction)showViewList:(id)sender
 {
+    if(self.view_table.hidden==true)
+    {
+        [self.view sendSubviewToBack:viewCollection];
+        self.view_table.hidden=false;
+
+    }
+    else
+    {
+        [self hideTableView];
+    }
+}
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch= [touches anyObject];
+    if ([touch view] == self.view_table || [touch view] == self.btn_list)
+    {
+        //do nothing
+    }
+    else
+    {
+        [self hideTableView];
+    }
+}
+//Method to hide tableview on background click
+-(void)hideTableView
+{
+    [self.view bringSubviewToFront:viewCollection];
+    self.view_table.hidden=true;
+}
+
+- (IBAction)refresh:(id)sender
+{
+    [self hideTableView];
+}
+
+- (IBAction)action:(id)sender
+{
+    [self hideTableView];
+}
+
+- (IBAction)saveViewAction:(id)sender
+
+{
+    [self hideTableView];
+
     NSString *strView = @"";
     
     for (int i =0; i<[sections count]; i++)
@@ -91,10 +135,23 @@
     [[nFlateAppDelegate sharedAppDelegate] addloadingView];
     
     [self requestForGettingViewData];
-
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    //TapGesture for handle touch outside of tableListVie
+    UITapGestureRecognizer *singleFingerTap =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(handleSingleTap:)];
+    [viewCollection addGestureRecognizer:singleFingerTap];
+    [self hideTableView];
+    
+        // Do any additional setup after loading the view, typically from a nib.
 }
 
+//The event handling method
+- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer
+{
+    [self.view bringSubviewToFront:viewCollection];
+    self.view_table.hidden=true;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -149,6 +206,4 @@
     
     
 }
-
-
 @end
