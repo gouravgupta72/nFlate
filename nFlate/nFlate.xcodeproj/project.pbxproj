@@ -98,10 +98,10 @@
 		0097932A18E3E200001D8576 /* login_btn_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_btn_pressed@2x.png"; sourceTree = "<group>"; };
 		0097933018E3E28A001D8576 /* CustomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomScrollView.h; sourceTree = "<group>"; };
 		0097933118E3E28A001D8576 /* CustomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomScrollView.m; sourceTree = "<group>"; };
-		0097933318E3E30D001D8576 /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
-		0097933418E3E30D001D8576 /* Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data.m; sourceTree = "<group>"; };
-		0097933618E3E30D001D8576 /* Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Key.h; sourceTree = "<group>"; };
-		0097933718E3E30D001D8576 /* Key.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Key.m; sourceTree = "<group>"; };
+		0097933318E3E30D001D8576 /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Data.h; path = ../Data.h; sourceTree = "<group>"; };
+		0097933418E3E30D001D8576 /* Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Data.m; path = ../Data.m; sourceTree = "<group>"; };
+		0097933618E3E30D001D8576 /* Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Key.h; path = ../Key.h; sourceTree = "<group>"; };
+		0097933718E3E30D001D8576 /* Key.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Key.m; path = ../Key.m; sourceTree = "<group>"; };
 		00990CF318CEE39C00EC3875 /* box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box.png; sourceTree = "<group>"; };
 		423FB72018BF32EF00BF4087 /* nFlate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nFlate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		423FB72318BF32EF00BF4087 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -228,6 +228,10 @@
 		0097930918E3DD46001D8576 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				0097933618E3E30D001D8576 /* Key.h */,
+				0097933718E3E30D001D8576 /* Key.m */,
+				0097933318E3E30D001D8576 /* Data.h */,
+				0097933418E3E30D001D8576 /* Data.m */,
 				0097931018E3DDCB001D8576 /* CoreDataClass.h */,
 				0097931118E3DDCB001D8576 /* CoreDataClass.m */,
 			);
@@ -289,10 +293,6 @@
 		423FB71718BF32EE00BF4087 = {
 			isa = PBXGroup;
 			children = (
-				0097933618E3E30D001D8576 /* Key.h */,
-				0097933718E3E30D001D8576 /* Key.m */,
-				0097933318E3E30D001D8576 /* Data.h */,
-				0097933418E3E30D001D8576 /* Data.m */,
 				0071D94F18C879B400B37337 /* nFlate.xcdatamodeld */,
 				423FB72918BF32EF00BF4087 /* nFlate */,
 				423FB74818BF32EF00BF4087 /* nFlateTests */,

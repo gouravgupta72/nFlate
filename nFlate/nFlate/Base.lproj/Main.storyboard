@@ -375,7 +375,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-25" y="-320"/>
+            <point key="canvasLocation" x="587" y="-897"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="f4J-4r-7pD">
@@ -444,7 +444,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="tapLogin:" destination="R3W-3O-D2r" eventType="touchUpInside" id="WSh-Ty-Pnd"/>
+                                            <action selector="tapLogin:" destination="R3W-3O-D2r" eventType="touchUpInside" id="CUn-o7-BMu"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -493,11 +493,12 @@
                         <outlet property="pageScroll" destination="wgl-Iw-Qzk" id="0O7-0D-CkZ"/>
                         <outlet property="txtPassword" destination="hrh-Cs-aJX" id="zdt-g0-njl"/>
                         <outlet property="txtuserName" destination="RcK-wN-BeR" id="Bno-za-nH8"/>
+                        <segue destination="BYZ-38-t0r" kind="modal" identifier="loginSegue" id="W2v-5u-ZBi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WsF-uz-R2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="910" y="-373"/>
+            <point key="canvasLocation" x="-301" y="-897"/>
         </scene>
     </scenes>
     <resources>

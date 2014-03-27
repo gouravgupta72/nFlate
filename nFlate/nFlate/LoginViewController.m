@@ -7,7 +7,7 @@
 //
 
 #import "LoginViewController.h"
-
+#import "nFlateViewController.h"
 @interface LoginViewController ()
 
 @end
@@ -145,7 +145,7 @@
     
     else
     {
-        
+         [self performSegueWithIdentifier:@"loginSegue" sender:self];
     }
 }
 @end

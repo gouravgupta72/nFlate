@@ -112,8 +112,8 @@
 -(void)removeLoadingView
 {
     if ([self.lview isDescendantOfView:self.window]) {
-//        [self.lview.activityIndicator stopAnimating];
-//        [self.lview removeFromSuperview];
+        //[self.lview.activityIndicator stopAnimating];
+       [self.lview removeFromSuperview];
     }
 }
 							
