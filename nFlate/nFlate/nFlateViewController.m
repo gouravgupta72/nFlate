@@ -63,7 +63,6 @@
     
 }
 
-
 -(void)requestForGettingViewData
 {
     [[nFlateAppDelegate sharedAppDelegate] addloadingView];
@@ -74,19 +73,26 @@
 
 - (IBAction)showViewList:(id)sender
 {
+    [self.view sendSubviewToBack:self.view_table2];
+    self.view_table2.hidden=true;
     if(self.view_table.hidden==true)
     {
+        
         [self.view sendSubviewToBack:viewCollection];
+        [self.view bringSubviewToFront:self.view_table];
+        //   self.view_table.hidden=true;
         self.view_table.hidden=false;
-
+        
     }
     else
     {
         [self hideTableView];
     }
 }
+
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    
     UITouch *touch= [touches anyObject];
     if ([touch view] == self.view_table || [touch view] == self.btn_list)
     {
@@ -97,10 +103,14 @@
         [self hideTableView];
     }
 }
-//Method to hide tableview on background click
+
+/**
+ *  hides tableview on background click
+ */
 -(void)hideTableView
 {
     [self.view bringSubviewToFront:viewCollection];
+    self.view_table2.hidden=true;
     self.view_table.hidden=true;
 }
 
@@ -111,7 +121,20 @@
 
 - (IBAction)action:(id)sender
 {
-    [self hideTableView];
+    [self.view sendSubviewToBack:self.view_table];
+    self.view_table.hidden=true;
+    if(self.view_table2.hidden==true)
+    {
+        
+        [self.view sendSubviewToBack:viewCollection];
+        [self.view bringSubviewToFront:self.view_table2];
+        //   self.view_table.hidden=true;
+        self.view_table2.hidden=false;
+    }
+    else
+    {
+        [self hideTableView];
+    }
 }
 
 - (IBAction)saveViewAction:(id)sender
@@ -142,15 +165,22 @@
                                             action:@selector(handleSingleTap:)];
     [viewCollection addGestureRecognizer:singleFingerTap];
     [self hideTableView];
-    
+
         // Do any additional setup after loading the view, typically from a nib.
 }
 
-//The event handling method
+/**
+ *  Hides tableViews on tap on collectionView
+ *
+ *  @param (UITapGestureRecognizer *)recognizer
+ *
+ *  @return void
+ */
 - (void)handleSingleTap:(UITapGestureRecognizer *)recognizer
 {
     [self.view bringSubviewToFront:viewCollection];
     self.view_table.hidden=true;
+    self.view_table2.hidden=true;
 }
 - (void)didReceiveMemoryWarning
 {

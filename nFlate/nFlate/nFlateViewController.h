@@ -12,13 +12,16 @@
 @interface nFlateViewController : UIViewController<UICollectionViewDataSource_Draggable, UICollectionViewDelegate,RequestDelegate>
 {
 }
+
 @property (weak, nonatomic) IBOutlet UIView *view_table;
+@property (weak, nonatomic) IBOutlet UIView *view_table2;
 - (IBAction)showViewList:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *btn_list;
 
 - (IBAction)saveViewAction:(id)sender;
 -(void)hideTableView;
 - (IBAction)refresh:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btn_list2;
 - (IBAction)action:(id)sender;
 
 @end
