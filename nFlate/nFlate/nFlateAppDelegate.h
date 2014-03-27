@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LoadingView.h"
+#import <CoreData/CoreData.h>
 //#import "loading.h"
 
 @interface nFlateAppDelegate : UIResponder <UIApplicationDelegate>

@@ -3,7 +3,17 @@
     <entity name="BackUp" syncable="YES">
         <attribute name="lastData" optional="YES" attributeType="Transformable" syncable="YES"/>
     </entity>
+    <entity name="Data" representedClassName="Data" syncable="YES">
+        <attribute name="dict" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="key" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Key" inverseName="data" inverseEntity="Key" syncable="YES"/>
+    </entity>
+    <entity name="Key" representedClassName="Key" syncable="YES">
+        <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="data" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Data" inverseName="key" inverseEntity="Data" syncable="YES"/>
+    </entity>
     <elements>
         <element name="BackUp" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Data" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Key" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

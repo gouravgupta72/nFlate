@@ -25,6 +25,19 @@
 		0071D94E18C8795000B37337 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0071D94D18C8795000B37337 /* CoreData.framework */; };
 		0071D95118C879B400B37337 /* nFlate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0071D94F18C879B400B37337 /* nFlate.xcdatamodeld */; };
 		0097930818E3DB52001D8576 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0097930718E3DB52001D8576 /* LoadingView.m */; };
+		0097931218E3DDCB001D8576 /* CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0097931118E3DDCB001D8576 /* CoreDataClass.m */; };
+		0097931618E3DDF1001D8576 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0097931518E3DDF1001D8576 /* LoginViewController.m */; };
+		0097932318E3E1D8001D8576 /* img_btnTabBg_home.png in Resources */ = {isa = PBXBuildFile; fileRef = 0097931F18E3E1D8001D8576 /* img_btnTabBg_home.png */; };
+		0097932418E3E1D8001D8576 /* imgLoginBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 0097932018E3E1D8001D8576 /* imgLoginBG.png */; };
+		0097932518E3E1D8001D8576 /* login_btn_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0097932118E3E1D8001D8576 /* login_btn_pressed.png */; };
+		0097932618E3E1D8001D8576 /* web_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0097932218E3E1D8001D8576 /* web_logo.png */; };
+		0097932B18E3E200001D8576 /* img_btnTabBg_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0097932718E3E200001D8576 /* img_btnTabBg_home@2x.png */; };
+		0097932C18E3E200001D8576 /* imgLoginBG-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0097932818E3E200001D8576 /* imgLoginBG-568h@2x.png */; };
+		0097932D18E3E200001D8576 /* imgLoginBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0097932918E3E200001D8576 /* imgLoginBG@2x.png */; };
+		0097932E18E3E200001D8576 /* login_btn_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0097932A18E3E200001D8576 /* login_btn_pressed@2x.png */; };
+		0097933218E3E28A001D8576 /* CustomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0097933118E3E28A001D8576 /* CustomScrollView.m */; };
+		0097933518E3E30D001D8576 /* Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 0097933418E3E30D001D8576 /* Data.m */; };
+		0097933818E3E30D001D8576 /* Key.m in Sources */ = {isa = PBXBuildFile; fileRef = 0097933718E3E30D001D8576 /* Key.m */; };
 		00990CF418CEE39C00EC3875 /* box.png in Resources */ = {isa = PBXBuildFile; fileRef = 00990CF318CEE39C00EC3875 /* box.png */; };
 		423FB72418BF32EF00BF4087 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 423FB72318BF32EF00BF4087 /* Foundation.framework */; };
 		423FB72618BF32EF00BF4087 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 423FB72518BF32EF00BF4087 /* CoreGraphics.framework */; };
@@ -71,6 +84,24 @@
 		0071D95018C879B400B37337 /* nFlate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = nFlate.xcdatamodel; sourceTree = "<group>"; };
 		0097930618E3DB52001D8576 /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
 		0097930718E3DB52001D8576 /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
+		0097931018E3DDCB001D8576 /* CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataClass.h; sourceTree = "<group>"; };
+		0097931118E3DDCB001D8576 /* CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataClass.m; sourceTree = "<group>"; };
+		0097931418E3DDF1001D8576 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		0097931518E3DDF1001D8576 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		0097931F18E3E1D8001D8576 /* img_btnTabBg_home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_btnTabBg_home.png; sourceTree = "<group>"; };
+		0097932018E3E1D8001D8576 /* imgLoginBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = imgLoginBG.png; sourceTree = "<group>"; };
+		0097932118E3E1D8001D8576 /* login_btn_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_btn_pressed.png; sourceTree = "<group>"; };
+		0097932218E3E1D8001D8576 /* web_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = web_logo.png; sourceTree = "<group>"; };
+		0097932718E3E200001D8576 /* img_btnTabBg_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_btnTabBg_home@2x.png"; sourceTree = "<group>"; };
+		0097932818E3E200001D8576 /* imgLoginBG-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgLoginBG-568h@2x.png"; sourceTree = "<group>"; };
+		0097932918E3E200001D8576 /* imgLoginBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "imgLoginBG@2x.png"; sourceTree = "<group>"; };
+		0097932A18E3E200001D8576 /* login_btn_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_btn_pressed@2x.png"; sourceTree = "<group>"; };
+		0097933018E3E28A001D8576 /* CustomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomScrollView.h; sourceTree = "<group>"; };
+		0097933118E3E28A001D8576 /* CustomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomScrollView.m; sourceTree = "<group>"; };
+		0097933318E3E30D001D8576 /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
+		0097933418E3E30D001D8576 /* Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data.m; sourceTree = "<group>"; };
+		0097933618E3E30D001D8576 /* Key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Key.h; sourceTree = "<group>"; };
+		0097933718E3E30D001D8576 /* Key.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Key.m; sourceTree = "<group>"; };
 		00990CF318CEE39C00EC3875 /* box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box.png; sourceTree = "<group>"; };
 		423FB72018BF32EF00BF4087 /* nFlate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nFlate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		423FB72318BF32EF00BF4087 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -194,6 +225,33 @@
 			name = loading;
 			sourceTree = "<group>";
 		};
+		0097930918E3DD46001D8576 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0097931018E3DDCB001D8576 /* CoreDataClass.h */,
+				0097931118E3DDCB001D8576 /* CoreDataClass.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		0097931318E3DDE8001D8576 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				0097931418E3DDF1001D8576 /* LoginViewController.h */,
+				0097931518E3DDF1001D8576 /* LoginViewController.m */,
+			);
+			name = LoginView;
+			sourceTree = "<group>";
+		};
+		0097932F18E3E27D001D8576 /* CustomScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				0097933018E3E28A001D8576 /* CustomScrollView.h */,
+				0097933118E3E28A001D8576 /* CustomScrollView.m */,
+			);
+			name = CustomScrollView;
+			sourceTree = "<group>";
+		};
 		00990CF018CEE37E00EC3875 /* imgaes */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +266,10 @@
 			isa = PBXGroup;
 			children = (
 				00990CF318CEE39C00EC3875 /* box.png */,
+				0097931F18E3E1D8001D8576 /* img_btnTabBg_home.png */,
+				0097932018E3E1D8001D8576 /* imgLoginBG.png */,
+				0097932118E3E1D8001D8576 /* login_btn_pressed.png */,
+				0097932218E3E1D8001D8576 /* web_logo.png */,
 			);
 			name = Normal;
 			sourceTree = "<group>";
@@ -216,6 +278,10 @@
 			isa = PBXGroup;
 			children = (
 				001F3AA818CEFCB800343345 /* box@2x.png */,
+				0097932718E3E200001D8576 /* img_btnTabBg_home@2x.png */,
+				0097932818E3E200001D8576 /* imgLoginBG-568h@2x.png */,
+				0097932918E3E200001D8576 /* imgLoginBG@2x.png */,
+				0097932A18E3E200001D8576 /* login_btn_pressed@2x.png */,
 			);
 			name = Retina;
 			sourceTree = "<group>";
@@ -223,6 +289,10 @@
 		423FB71718BF32EE00BF4087 = {
 			isa = PBXGroup;
 			children = (
+				0097933618E3E30D001D8576 /* Key.h */,
+				0097933718E3E30D001D8576 /* Key.m */,
+				0097933318E3E30D001D8576 /* Data.h */,
+				0097933418E3E30D001D8576 /* Data.m */,
 				0071D94F18C879B400B37337 /* nFlate.xcdatamodeld */,
 				423FB72918BF32EF00BF4087 /* nFlate */,
 				423FB74818BF32EF00BF4087 /* nFlateTests */,
@@ -255,6 +325,9 @@
 		423FB72918BF32EF00BF4087 /* nFlate */ = {
 			isa = PBXGroup;
 			children = (
+				0097932F18E3E27D001D8576 /* CustomScrollView */,
+				0097931318E3DDE8001D8576 /* LoginView */,
+				0097930918E3DD46001D8576 /* CoreData */,
 				00990CF018CEE37E00EC3875 /* imgaes */,
 				002B2BDB18C851DF0047072C /* Icon */,
 				00534DE018C594A800EE1C91 /* loading */,
@@ -414,16 +487,24 @@
 				423FB72E18BF32EF00BF4087 /* InfoPlist.strings in Resources */,
 				002B2BEF18C851DF0047072C /* icon-72.png in Resources */,
 				002B2BEA18C851DF0047072C /* icon-100.png in Resources */,
+				0097932318E3E1D8001D8576 /* img_btnTabBg_home.png in Resources */,
+				0097932C18E3E200001D8576 /* imgLoginBG-568h@2x.png in Resources */,
 				423FB73718BF32EF00BF4087 /* Main.storyboard in Resources */,
+				0097932B18E3E200001D8576 /* img_btnTabBg_home@2x.png in Resources */,
 				001F3AA918CEFCB800343345 /* box@2x.png in Resources */,
 				002B2BEB18C851DF0047072C /* icon-144.png in Resources */,
 				002B2BF418C851DF0047072C /* Icon-Small.png in Resources */,
 				002B2BF318C851DF0047072C /* Icon-Small-50.png in Resources */,
 				002B2BED18C851DF0047072C /* icon-40.png in Resources */,
+				0097932E18E3E200001D8576 /* login_btn_pressed@2x.png in Resources */,
+				0097932D18E3E200001D8576 /* imgLoginBG@2x.png in Resources */,
 				42CAF00818E02A7F0017BAD3 /* list.png in Resources */,
+				0097932618E3E1D8001D8576 /* web_logo.png in Resources */,
 				002B2BF518C851DF0047072C /* icon-Small@2x.png in Resources */,
+				0097932518E3E1D8001D8576 /* login_btn_pressed.png in Resources */,
 				42CAF00918E02A7F0017BAD3 /* refresh.png in Resources */,
 				00990CF418CEE39C00EC3875 /* box.png in Resources */,
+				0097932418E3E1D8001D8576 /* imgLoginBG.png in Resources */,
 				002B2BF118C851DF0047072C /* icon-80.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,18 +517,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				00534DDF18C593D600EE1C91 /* Reachability.m in Sources */,
+				0097931218E3DDCB001D8576 /* CoreDataClass.m in Sources */,
+				0097933218E3E28A001D8576 /* CustomScrollView.m in Sources */,
 				0097930818E3DB52001D8576 /* LoadingView.m in Sources */,
 				423FB76F18BF47A600BF4087 /* UICollectionView+Draggable.m in Sources */,
 				423FB73A18BF32EF00BF4087 /* nFlateViewController.m in Sources */,
 				0039235C18C1DA5B000DC954 /* NSData+Base64.m in Sources */,
 				423FB73418BF32EF00BF4087 /* nFlateAppDelegate.m in Sources */,
 				0039235918C1DA06000DC954 /* JSONKit.m in Sources */,
+				0097933818E3E30D001D8576 /* Key.m in Sources */,
 				0071D95118C879B400B37337 /* nFlate.xcdatamodeld in Sources */,
 				423FB75E18BF45DF00BF4087 /* nFlateCustomCell.m in Sources */,
 				423FB76D18BF47A600BF4087 /* LSCollectionViewLayoutHelper.m in Sources */,
 				0039236418C1ED3D000DC954 /* Request.m in Sources */,
 				0051FD6A18C44705002E717D /* nFlateViewDataClass.m in Sources */,
+				0097931618E3DDF1001D8576 /* LoginViewController.m in Sources */,
 				423FB76E18BF47A600BF4087 /* DraggableCollectionViewFlowLayout.m in Sources */,
+				0097933518E3E30D001D8576 /* Data.m in Sources */,
 				423FB73018BF32EF00BF4087 /* main.m in Sources */,
 				423FB76C18BF47A600BF4087 /* LSCollectionViewHelper.m in Sources */,
 			);
