@@ -24,8 +24,8 @@
 		00534DDF18C593D600EE1C91 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 00534DDE18C593D600EE1C91 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0071D94E18C8795000B37337 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0071D94D18C8795000B37337 /* CoreData.framework */; };
 		0071D95118C879B400B37337 /* nFlate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0071D94F18C879B400B37337 /* nFlate.xcdatamodeld */; };
+		0097930818E3DB52001D8576 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0097930718E3DB52001D8576 /* LoadingView.m */; };
 		00990CF418CEE39C00EC3875 /* box.png in Resources */ = {isa = PBXBuildFile; fileRef = 00990CF318CEE39C00EC3875 /* box.png */; };
-		421992EC18E2F4EF005F7235 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 421992EB18E2F4EF005F7235 /* LoadingView.m */; };
 		423FB72418BF32EF00BF4087 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 423FB72318BF32EF00BF4087 /* Foundation.framework */; };
 		423FB72618BF32EF00BF4087 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 423FB72518BF32EF00BF4087 /* CoreGraphics.framework */; };
 		423FB72818BF32EF00BF4087 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 423FB72718BF32EF00BF4087 /* UIKit.framework */; };
@@ -69,9 +69,9 @@
 		00534DDE18C593D600EE1C91 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		0071D94D18C8795000B37337 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0071D95018C879B400B37337 /* nFlate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = nFlate.xcdatamodel; sourceTree = "<group>"; };
+		0097930618E3DB52001D8576 /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
+		0097930718E3DB52001D8576 /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
 		00990CF318CEE39C00EC3875 /* box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box.png; sourceTree = "<group>"; };
-		421992EA18E2F4EF005F7235 /* LoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingView.h; sourceTree = "<group>"; };
-		421992EB18E2F4EF005F7235 /* LoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingView.m; sourceTree = "<group>"; };
 		423FB72018BF32EF00BF4087 /* nFlate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nFlate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		423FB72318BF32EF00BF4087 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		423FB72518BF32EF00BF4087 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -188,8 +188,8 @@
 		00534DE018C594A800EE1C91 /* loading */ = {
 			isa = PBXGroup;
 			children = (
-				421992EA18E2F4EF005F7235 /* LoadingView.h */,
-				421992EB18E2F4EF005F7235 /* LoadingView.m */,
+				0097930618E3DB52001D8576 /* LoadingView.h */,
+				0097930718E3DB52001D8576 /* LoadingView.m */,
 			);
 			name = loading;
 			sourceTree = "<group>";
@@ -436,7 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00534DDF18C593D600EE1C91 /* Reachability.m in Sources */,
-				421992EC18E2F4EF005F7235 /* LoadingView.m in Sources */,
+				0097930818E3DB52001D8576 /* LoadingView.m in Sources */,
 				423FB76F18BF47A600BF4087 /* UICollectionView+Draggable.m in Sources */,
 				423FB73A18BF32EF00BF4087 /* nFlateViewController.m in Sources */,
 				0039235C18C1DA5B000DC954 /* NSData+Base64.m in Sources */,

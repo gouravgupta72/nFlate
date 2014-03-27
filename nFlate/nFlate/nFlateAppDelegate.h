@@ -13,6 +13,7 @@
 @interface nFlateAppDelegate : UIResponder <UIApplicationDelegate>
 {
     BOOL isInternetAvailable;
+    
     LoadingView *lview;
     
     NSManagedObjectModel *managedObjectModel;
