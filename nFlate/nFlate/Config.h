@@ -139,12 +139,104 @@ inline static UIImage *imagetinting(UIImage *img,UIColor *color)
     
     //return the color-burned image
     return coloredImg;
+}
+typedef enum
+{
+    table1=0,
+    table2
+}ComboBox;
+
+/**
+ *  Returns UIColor after conversion of Hex color
+ *
+ *  @param NSString *hex
+ *
+ *  @return UIColor
+ */
+inline static UIColor *colorWithHexString(NSString *hex)
+{
+    NSString *cString = [[hex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
+    
+    // String should be 6 or 8 characters
+    if ([cString length] < 6) return [UIColor grayColor];
+    
+    // strip 0X if it appears
+    if ([cString hasPrefix:@"0X"]) cString = [cString substringFromIndex:2];
+    
+    if ([cString length] != 6) return  [UIColor grayColor];
+    
+    // Separate into r, g, b substrings
+    NSRange range;
+    range.location = 0;
+    range.length = 2;
+    NSString *rString = [cString substringWithRange:range];
+    
+    range.location = 2;
+    NSString *gString = [cString substringWithRange:range];
+    
+    range.location = 4;
+    NSString *bString = [cString substringWithRange:range];
+    
+    // Scan values
+    unsigned int r, g, b;
+    
+    [[NSScanner scannerWithString:rString] scanHexInt:&r];
+    [[NSScanner scannerWithString:gString] scanHexInt:&g];
+    [[NSScanner scannerWithString:bString] scanHexInt:&b];
+    
+    return [UIColor colorWithRed:((float) r / 255.0f)
+                           green:((float) g / 255.0f)
+                            blue:((float) b / 255.0f)
+                           alpha:1.0f];
+}
+
+/**
+ *  Returns complement UIColor after conversion of Hex color
+ *
+ *  @param NSString *hex
+ *
+ *  @return UIColor
+ */
+inline static UIColor *complementryColorWithHexString(NSString *hex)
+{
+    NSString *cString = [[hex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
+    
+    // String should be 6 or 8 characters
+    if ([cString length] < 6) return [UIColor grayColor];
+    
+    // strip 0X if it appears
+    if ([cString hasPrefix:@"0X"]) cString = [cString substringFromIndex:2];
+    
+    if ([cString length] != 6) return  [UIColor grayColor];
+    
+    // Separate into r, g, b substrings
+    NSRange range;
+    range.location = 0;
+    range.length = 2;
+    NSString *rString = [cString substringWithRange:range];
+    
+    range.location = 2;
+    NSString *gString = [cString substringWithRange:range];
+    
+    range.location = 4;
+    NSString *bString = [cString substringWithRange:range];
+    
+    // Scan values
+    unsigned int r, g, b;
+    [[NSScanner scannerWithString:rString] scanHexInt:&r];
+    [[NSScanner scannerWithString:gString] scanHexInt:&g];
+    [[NSScanner scannerWithString:bString] scanHexInt:&b];
+    
+    return [UIColor colorWithRed:1-((float) r / 255.0f)
+                           green:1-((float) g / 255.0f)
+                            blue:1-((float) b / 255.0f)
+                           alpha:1.0f];
     
 }
 
-
-
-
-
+# define CELL_SIZE_1 44
+# define CELL_SIZE_2 55
+# define MAX_DISPLAY_ROWS_TABLE_1 4
+# define MAX_DISPLAY_ROWS_TABLE_2 6
 
 
