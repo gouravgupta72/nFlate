@@ -146,7 +146,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Big Time Games" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ck3-9P-8t2">
-                                                        <rect key="frame" x="91" y="13" width="153" height="21"/>
+                                                        <rect key="frame" x="102" y="13" width="138" height="21"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="21" id="cV3-ff-DEy"/>
                                                         </constraints>
@@ -158,10 +158,10 @@
                                                 <constraints>
                                                     <constraint firstItem="Ck3-9P-8t2" firstAttribute="top" secondItem="u8z-h7-qyX" secondAttribute="top" constant="13" id="AX0-I9-iBX"/>
                                                     <constraint firstItem="GDd-gN-omi" firstAttribute="leading" secondItem="u8z-h7-qyX" secondAttribute="leading" constant="8" id="M0a-e3-ohr"/>
-                                                    <constraint firstItem="Ck3-9P-8t2" firstAttribute="leading" secondItem="GDd-gN-omi" secondAttribute="trailing" constant="-5" id="c1p-y5-FMT"/>
+                                                    <constraint firstItem="Ck3-9P-8t2" firstAttribute="leading" secondItem="GDd-gN-omi" secondAttribute="trailing" constant="6" id="c1p-y5-FMT"/>
                                                     <constraint firstItem="GDd-gN-omi" firstAttribute="top" secondItem="Ck3-9P-8t2" secondAttribute="top" constant="-7" id="iwY-HR-C4m"/>
                                                     <constraint firstAttribute="width" constant="250" id="lla-9G-lSX"/>
-                                                    <constraint firstItem="Ck3-9P-8t2" firstAttribute="trailing" secondItem="u8z-h7-qyX" secondAttribute="trailing" constant="-6" id="rgt-Cd-R8Q"/>
+                                                    <constraint firstItem="Ck3-9P-8t2" firstAttribute="trailing" secondItem="u8z-h7-qyX" secondAttribute="trailing" constant="-10" id="rgt-Cd-R8Q"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -338,7 +338,7 @@
                                 <rect key="frame" x="300" y="77" width="168" height="400"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8mX-yT-LcH" customClass="CustomTableView">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8mX-yT-LcH" customClass="CustomTableView">
                                         <rect key="frame" x="0.0" y="0.0" width="168" height="400"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" red="0.13717440282132665" green="1" blue="0.15347621517552235" alpha="1" colorSpace="calibratedRGB"/>

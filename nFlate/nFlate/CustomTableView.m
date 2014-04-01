@@ -19,7 +19,7 @@
         self.delegate=self;
         self.dataSource=self;
         self.bounces=false;
-        [self setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+        [self setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
         [self setShowsHorizontalScrollIndicator:NO];
         [self setShowsVerticalScrollIndicator:NO];
     }

@@ -357,8 +357,10 @@
             break;
     }
     
-    UIAlertView *alert=[[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%d",tableType] message:que delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+   /* UIAlertView *alert=[[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%d",tableType] message:que delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
     [alert show];
+    */
+
     [self hideTableView];
    // [self.view bringSubviewToFront:viewCollection];
  //   self.view_table2.hidden=true;
