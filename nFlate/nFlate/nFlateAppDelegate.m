@@ -9,7 +9,7 @@
 #import "nFlateAppDelegate.h"
 #import "LoadingView.h"
 @implementation nFlateAppDelegate
-@synthesize lview,managedObjectContext,managedObjectModel,persistentStoreCoordinator;
+@synthesize lview,managedObjectContext,managedObjectModel,persistentStoreCoordinator,userID;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

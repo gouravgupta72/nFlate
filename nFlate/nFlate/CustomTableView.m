@@ -7,6 +7,14 @@
 //
 
 #import "CustomTableView.h"
+#import "DeveloperDataClass.h"
+#import "GameDataClass.h"
+@interface CustomTableView()
+{
+    DeveloperDataClass *objDeveloper;
+    GameDataClass *objGame;
+}
+@end
 @implementation CustomTableView
 
 - (id)initWithFrame:(CGRect)frame array:(NSArray*)arr TableType:(int)type
@@ -20,6 +28,7 @@
         self.dataSource=self;
         self.bounces=false;
         [self setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+        [self setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
         [self setShowsHorizontalScrollIndicator:NO];
         [self setShowsVerticalScrollIndicator:NO];
     }
@@ -80,17 +89,25 @@
     switch (tableType)
     {
         case table1:
+            
         {
-            cell.textLabel.text=[self.arr objectAtIndex:indexPath.row];
+            objDeveloper=[[DeveloperDataClass alloc]init];
+            objDeveloper= [self.arr objectAtIndex:indexPath.row];
+            if (![objDeveloper.name isKindOfClass:[NSNull class]]) {
+                cell.textLabel.text=[NSString stringWithFormat:@"%@",objDeveloper.name];
+            }
+            
         }
             break;
         case table2:
         {
-            cell.textLabel.text=[NSString stringWithFormat:@"%@",[self.arr objectAtIndex:indexPath.row]];
-            //cell.imageView.image=[self.arr objectAtIndex:indexPath.row];
+            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
 
-           // cell.imageView.image=[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",[self.arr objectAtIndex:indexPath.row]]];
-            cell.imageView.image=imagetinting([UIImage imageNamed:@"mini_box"], [UIColor colorWithRed:(arc4random() % 255)/255.0 green:(arc4random() % 255)/255.0 blue:(arc4random() % 255)/255.0 alpha:0.2]);
+            objGame=[[GameDataClass alloc]init];
+            objGame= [self.arr objectAtIndex:indexPath.row];
+            cell.textLabel.text=[NSString stringWithFormat:@"%@",objGame.gameName];
+            
+            cell.imageView.image=imagetinting([UIImage imageNamed:@"mini_box"], colorWithHexString(objGame.gameColor));
         }
             break;
     }
@@ -103,12 +120,17 @@
     {
         case table1:
         {
-            [self.delgate selectQuetion:[self.arr objectAtIndex:indexPath.row]];
+            
+            objDeveloper= [self.arr objectAtIndex:indexPath.row];
+            [self.delgate selectQuetion:objDeveloper.name strid:objDeveloper.idstr];
         }
             break;
         case table2:
         {
-            [self.delgate selectQuetion:[self.arr objectAtIndex:indexPath.row]];
+
+//           // [self.delgate selectQuetion:[self.arr objectAtIndex:indexPath.row]];
+//            obj= [self.arr objectAtIndex:indexPath.row];
+//            [self.delgate selectQuetion:obj.name strid:obj.idstr];
 
         }
             break;

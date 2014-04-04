@@ -38,7 +38,10 @@
 #define FONT_55 [UIFont fontWithName:@"Qlassik Bold" size:55.0f]
 
 #define FONT_ARIAL_BOLD_12 [UIFont fontWithName:@"Bold" size:12.0f]
+#define BASEURL @"http://192.168.0.114:8888/nFlate_PHP/getViewList.php?"
 
+#define GETVIEWURL @"http://192.168.0.114:8888/nFlate_PHP/getView_Data.php"
+#define LOGINURL @"http://192.168.0.114:8888/nFlate_PHP/nfLogin.php?"
 
 
 
@@ -140,11 +143,16 @@ inline static UIImage *imagetinting(UIImage *img,UIColor *color)
     //return the color-burned image
     return coloredImg;
 }
+/**
+ *  enum for table type
+ */
 typedef enum
 {
     table1=0,
     table2
 }ComboBox;
+
+
 
 /**
  *  Returns UIColor after conversion of Hex color
@@ -159,6 +167,16 @@ inline static UIColor *colorWithHexString(NSString *hex)
     
     // String should be 6 or 8 characters
     if ([cString length] < 6) return [UIColor grayColor];
+    
+    // strip " "
+    NSCharacterSet *charSet = [NSCharacterSet characterSetWithCharactersInString:@"\""];
+    cString=[cString stringByTrimmingCharactersInSet:charSet];
+    
+    //strip #
+    if ([cString hasPrefix:@"#"])
+    {
+        cString=[cString substringFromIndex:1];
+    }
     
     // strip 0X if it appears
     if ([cString hasPrefix:@"0X"]) cString = [cString substringFromIndex:2];
@@ -204,6 +222,16 @@ inline static UIColor *complementryColorWithHexString(NSString *hex)
     // String should be 6 or 8 characters
     if ([cString length] < 6) return [UIColor grayColor];
     
+    // strip " "
+    NSCharacterSet *charSet = [NSCharacterSet characterSetWithCharactersInString:@"\""];
+    cString=[cString stringByTrimmingCharactersInSet:charSet];
+    
+    //strip #
+    if ([cString hasPrefix:@"#"])
+    {
+        cString=[cString substringFromIndex:1];
+    }
+    
     // strip 0X if it appears
     if ([cString hasPrefix:@"0X"]) cString = [cString substringFromIndex:2];
     
@@ -234,9 +262,30 @@ inline static UIColor *complementryColorWithHexString(NSString *hex)
     
 }
 
+
+/**
+ *  enum for request response
+ */
+typedef enum
+{
+    request1=0,
+    request2,
+    request3
+}requestType;
 # define CELL_SIZE_1 44
 # define CELL_SIZE_2 55
 # define MAX_DISPLAY_ROWS_TABLE_1 4
 # define MAX_DISPLAY_ROWS_TABLE_2 6
 
+inline static BOOL checkIsDictionaryValueNullOrNil(NSMutableDictionary *dict, NSString *strKey)
+{
+    if ([[dict valueForKey:strKey] isKindOfClass:[NSNull class]] || [dict valueForKey:strKey] == nil)
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+}
 

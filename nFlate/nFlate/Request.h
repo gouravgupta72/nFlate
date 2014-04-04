@@ -18,6 +18,8 @@
 }
 @property(nonatomic,retain)id<RequestDelegate>delegate;
 -(void)request:(NSString *)Action Parameter:(NSString *)parameter ;
+-(void)postRequest:(NSString*)dictStr url:(NSString*)urlstr;
+
 @end
 
 @protocol RequestDelegate <NSObject>

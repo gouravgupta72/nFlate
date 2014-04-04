@@ -12,13 +12,13 @@
 #import "CustomTableView.h"
 @interface nFlateViewController : UIViewController<UICollectionViewDataSource_Draggable, UICollectionViewDelegate,RequestDelegate,CustomTableViewDelegate>
 {
-    NSMutableArray *arr1;
-    
-    NSMutableArray *arr2;
     int tableType;
+    int request;
+    NSMutableArray *gameArr;
 
 }
-
+@property (weak, nonatomic) IBOutlet UILabel *lbluserID;
+@property (strong, nonatomic)NSMutableArray *gameArr;
 @property (weak, nonatomic) IBOutlet UIView *view_table;
 @property (weak, nonatomic) IBOutlet UIView *view_table2;
 - (IBAction)showViewList:(id)sender;

@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CustomScrollView.h"
-@interface LoginViewController : UIViewController<ScrollDelegate>
+#import "Request.h"
+@interface LoginViewController : UIViewController<ScrollDelegate,RequestDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *txtuserName;
 @property (weak, nonatomic) IBOutlet UITextField *txtPassword;
 - (IBAction)tapLogin:(id)sender;

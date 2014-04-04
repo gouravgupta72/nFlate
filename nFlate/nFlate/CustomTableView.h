@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @protocol CustomTableViewDelegate <NSObject>
--(void) selectQuetion:(id) que ;
+-(void) selectQuetion:(id) strName strid:(id) strid;
 
 
 @end
