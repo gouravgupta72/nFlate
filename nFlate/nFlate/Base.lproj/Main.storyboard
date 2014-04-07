@@ -193,7 +193,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="138" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </imageView>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yls-hG-WKZ">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--Select View--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yls-hG-WKZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="138" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -334,7 +334,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="2yw-MP-XTx"/>
                                 </connections>
                             </collectionView>
-                            <view alpha="0.80000000000000004" tag="10" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="KAB-jf-LNK">
+                            <view tag="10" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="KAB-jf-LNK">
                                 <rect key="frame" x="300" y="77" width="168" height="400"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -356,7 +356,7 @@
                                     <constraint firstItem="8mX-yT-LcH" firstAttribute="leading" secondItem="KAB-jf-LNK" secondAttribute="leading" id="o6R-dp-7cx"/>
                                 </constraints>
                             </view>
-                            <view alpha="0.80000000000000004" tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rxS-nE-Iiv">
+                            <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rxS-nE-Iiv">
                                 <rect key="frame" x="585" y="79" width="183" height="440"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>

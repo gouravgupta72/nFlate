@@ -38,10 +38,10 @@
 #define FONT_55 [UIFont fontWithName:@"Qlassik Bold" size:55.0f]
 
 #define FONT_ARIAL_BOLD_12 [UIFont fontWithName:@"Bold" size:12.0f]
-#define BASEURL @"http://192.168.0.114:8888/nFlate_PHP/getViewList.php?"
+#define BASEURL @"http://192.168.0.110:8888/nFlate_PHP/getViewList.php?"
 
-#define GETVIEWURL @"http://192.168.0.114:8888/nFlate_PHP/getView_Data.php"
-#define LOGINURL @"http://192.168.0.114:8888/nFlate_PHP/nfLogin.php?"
+#define GETVIEWURL @"http://192.168.0.110:8888/nFlate_PHP/getView_Data.php"
+#define LOGINURL @"http://192.168.0.110:8888/nFlate_PHP/nfLogin.php?"
 
 
 
@@ -127,7 +127,7 @@ inline static UIImage *imagetinting(UIImage *img,UIColor *color)
     CGContextScaleCTM(context, 1.0, -1.0);
     
     // set the blend mode to color burn, and the original image
-    CGContextSetBlendMode(context, kCGBlendModeColorBurn);
+    CGContextSetBlendMode(context, kCGBlendModeOverlay);
     CGRect rect = CGRectMake(0, 0, img.size.width, img.size.height);
     CGContextDrawImage(context, rect, img.CGImage);
     

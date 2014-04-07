@@ -15,6 +15,7 @@
     int tableType;
     int request;
     NSMutableArray *gameArr;
+    NSMutableArray *arrGameList;
 
 }
 @property (weak, nonatomic) IBOutlet UILabel *lbluserID;
@@ -31,5 +32,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblTable1;
 @property (weak, nonatomic) IBOutlet UIButton *btn_list2;
 - (IBAction)action:(id)sender;
+@property (strong, nonatomic)NSMutableArray *arrGameList;
+
 
 @end

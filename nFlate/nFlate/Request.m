@@ -107,7 +107,7 @@
         {
             if ([self.delegate respondsToSelector:@selector(getError:)])
             {
-                [self.delegate getError:error];
+                [self.delegate getError:error.localizedDescription];
             }
         }
     }

@@ -31,6 +31,21 @@
         [self setSeparatorInset:UIEdgeInsetsMake(0, 0, 0, 0)];
         [self setShowsHorizontalScrollIndicator:NO];
         [self setShowsVerticalScrollIndicator:NO];
+        
+      /*  if(tableType==table2)
+        {
+                for(int i=0;i<[self.arr count];i++)
+                    NSLog(@"===%@",[NSString stringWithFormat:@"%@",[[self.arr objectAtIndex:i] gameID]]);
+                
+                
+                NSMutableArray *uniqueArray = [[NSMutableArray alloc]init];
+                
+                [uniqueArray addObjectsFromArray:[[NSSet setWithArray:self.arr] allObjects]];
+                self.arr=uniqueArray;
+                for(int i=0;i<[self.arr count];i++)
+                    NSLog(@"//////===%@",[[self.arr objectAtIndex:i] gameID]);
+        }
+        */
     }
     return self;
 }
