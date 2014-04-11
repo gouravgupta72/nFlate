@@ -10,10 +10,12 @@
 #import "nFlateViewController.h"
 #import "GameDataClass.h"
 #import "nFlateAppDelegate.h"
+#import "CoreDataClass.h"
 @interface LoginViewController ()
 {
     NSMutableArray *arrGame;
     NSString *idStr;
+    CoreDataClass *objCoreData;
 }
 @end
 
@@ -31,6 +33,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    objCoreData=[[CoreDataClass alloc]init];
     [self.navigationController setNavigationBarHidden:YES];
 	// Do any additional setup after loading the view.
     [self.txtuserName setValue:[UIColor colorWithRed:42.0/255.0 green:111.0/255.0 blue:37.0/255.0 alpha:1.0] forKeyPath:@"_placeholderLabel.textColor"];
@@ -154,9 +157,10 @@
         [[nFlateAppDelegate sharedAppDelegate] addloadingView];
         Request *req=[[Request alloc]init];
         req.delegate=self;
-       NSString *postParam=[NSString stringWithFormat:@"dID=%@",self.txtuserName.text];
-        NSLog(@"%@",postParam);
-        [req postRequest:postParam url:LOGINURL];
+        
+        NSDictionary *dict=@{@"dID": self.txtuserName.text};
+        NSLog(@"%@",dict);
+        [req postRequest:dict url:LOGINURL];
     
         
     }
@@ -177,9 +181,27 @@
 
 -(void)getError:(id)error
 {
-    [[nFlateAppDelegate sharedAppDelegate] removeLoadingView];
-    NSString *errStr=[NSString stringWithFormat:@"%@",error];
-    showAlert(@"Failure", errStr, self);
+//    [[nFlateAppDelegate sharedAppDelegate] removeLoadingView];
+//    NSString *errStr=[NSString stringWithFormat:@"%@",error];
+//    showAlert(@"Failure", errStr, self);
+    
+    if (!arrGame)
+    {
+        arrGame = [[NSMutableArray alloc]init];
+    }else
+    {
+        [arrGame removeAllObjects];
+    }
+    arrGame= [objCoreData showGameList:[NSString stringWithFormat:@"%@",self.txtuserName.text]];
+    if ([arrGame count]==0) {
+         showAlert(@"Failure", @"No Data Saved", self);
+    }
+    else{
+        [nFlateAppDelegate sharedAppDelegate].userID=self.txtuserName.text;
+        [self performSegueWithIdentifier:@"loginSegue" sender:self];
+
+    }
+
     
 }
 
@@ -189,8 +211,9 @@
     
     
     NSLog(@"jsonData=%@",jsonData);
-    
-    
+//    [nFlateAppDelegate sharedAppDelegate].userID=self.txtuserName.text;
+//    [self performSegueWithIdentifier:@"loginSegue" sender:self];
+//    
     if ([jsonData isKindOfClass:[NSDictionary class]])
     {
         
@@ -259,7 +282,9 @@
                             }
                             
                             
+                            NSDictionary *coreDataDict=[[NSDictionary alloc]initWithObjectsAndKeys:arrGame,[nFlateAppDelegate sharedAppDelegate].userID, nil];
                             
+                            [objCoreData saveGameData:coreDataDict];
                         }
                         
                     }
@@ -267,12 +292,7 @@
                     
                 }
             }
-        
-        
-        
-    
-    
-}
+ }
 
 
 

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ViewDataClass : NSObject
+@interface ViewDataClass : NSObject<NSCoding>
 {
     NSString *gameID,*matrixID,*title,*value;
 }

@@ -44,37 +44,34 @@
         [[nFlateAppDelegate sharedAppDelegate] removeLoadingView];
     }
 }
+
 /**
  *  method for post request
  *
  *  @param dict the parameter json data to post
  */
--(void)postRequest:(NSString*)dictStr url:(NSString*)urlstr
+-(void)postRequest:(NSDictionary*)dict url:(NSString*)urlstr
 {
     if (!validateNetwork(self))
     {
         
         NSMutableData *data = [[NSMutableData alloc] init];
         webData = data;
-        NSURL *url=[NSURL URLWithString:urlstr];
+        NSString *finalurl=[NSString stringWithFormat:@"%@%@",BASEURL,urlstr];
+        NSURL *url=[NSURL URLWithString:finalurl];
                NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:url];
         
-      // NSData* dataRequest = [NSData dataWithBytes:[dictStr UTF8String] length:[dictStr length]];
-          NSData* dataRequest = [NSData dataWithBytes:[dictStr UTF8String] length:[dictStr length]];
+        NSError *err;
+        
+        NSData* dataRequest = [NSJSONSerialization dataWithJSONObject:dict options:kNilOptions error:&err];
         
         [postRequest setHTTPMethod:@"POST"];
         [postRequest setValue:[NSString stringWithFormat:@"%d", dataRequest.length] forHTTPHeaderField:@"Content-Length"];
-        [postRequest setValue:@"application/x-www-form-urlencoded charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+        [postRequest setValue:@"application/json charset=utf-8" forHTTPHeaderField:@"Content-Type"];
         [postRequest setHTTPBody:dataRequest];
-         [postRequest setTimeoutInterval:10.0];
         
         
-
-        
-        
-        
-        
-        
+        [postRequest setTimeoutInterval:10.0];
         
         conn = [[NSURLConnection alloc]initWithRequest:postRequest delegate:self];
         if(conn)
@@ -109,6 +106,8 @@
             {
                 [self.delegate getError:error.localizedDescription];
             }
+            [[nFlateAppDelegate sharedAppDelegate] removeLoadingView];
+
         }
     }
 }
@@ -134,7 +133,7 @@
     
     NSError *e = nil;
    // NSData *jsonData = [responseString dataUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:webData options: NSJSONReadingMutableContainers error: &e];
+    NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:webData options: kNilOptions error: &e];
 //     id result =[[NSString alloc]initWithData:webData encoding:NSUTF8StringEncoding];
     
     

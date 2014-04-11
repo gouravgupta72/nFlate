@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface CoreDataClass : NSObject
--(void)saveData:(NSArray*)datarr;
+-(void)saveData:(NSDictionary*)datadict;
+-(void)saveDataList:(NSDictionary*) dict;
+-(void)saveGameData:(NSDictionary*) dict;
+-(NSMutableArray*)showData:(NSString *)strKey;
+-(NSMutableArray*)showDataList:(NSString *)strKey;
+-(NSMutableArray*)showGameList:(NSString *)strKey;
+
 
 @end

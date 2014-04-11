@@ -8,11 +8,11 @@
 
 #import "nFlateViewController.h"
 #import "nFlateCustomCell.h"
-#import "nFlateViewDataClass.h"
 #import "CustomTableView.h"
 #import "DeveloperDataClass.h"
 #import "ViewDataClass.h"
 #import "GameDataClass.h"
+#import "CoreDataClass.h"
 
 #define SECTION_COUNT 5
 #define ITEM_COUNT 20
@@ -23,6 +23,8 @@
     NSMutableArray *sections;
     NSMutableArray *arrDeveloper;
     NSMutableArray *arrView;
+     CoreDataClass *objcoreData;
+    NSString *listselectID;
 }
 @end
 
@@ -31,8 +33,57 @@
 #pragma mark Response/Request Method
 -(void)getError:(id)error
 {
-    [[nFlateAppDelegate sharedAppDelegate] removeLoadingView];
-    showAlert(@"Failure", error, self);
+//    [[nFlateAppDelegate sharedAppDelegate] removeLoadingView];
+//    showAlert(@"Failure", error, self);
+    
+    switch (request) {
+        case request1:
+        {
+            if (!arrDeveloper)
+            {
+                arrDeveloper = [[NSMutableArray alloc]init];
+            }else
+            {
+                [arrDeveloper removeAllObjects];
+            }
+            
+            arrDeveloper= [objcoreData showDataList:[NSString stringWithFormat:@"%@",[nFlateAppDelegate sharedAppDelegate].userID]];
+            if ([arrDeveloper count]==0) {
+                showAlert(@"Failure", @"No Data Saved", self);
+            }
+            else{
+                
+                [self selectQuetion:[[arrDeveloper objectAtIndex:0] name] strid:[[arrDeveloper objectAtIndex:0] idstr]];
+            }
+
+        }
+        break;
+        case request2:
+        {
+            if (!sections)
+            {
+                sections = [[NSMutableArray alloc]init];
+            }else
+            {
+                [sections removeAllObjects];
+            }
+            
+            sections= [objcoreData showData:[NSString stringWithFormat:@"%@&%@",[nFlateAppDelegate sharedAppDelegate].userID ,listselectID]];
+            if ([arrDeveloper count]==0) {
+                showAlert(@"Failure", @"No Data Saved", self);
+            }
+            else{
+                [viewCollection reloadData];
+
+            }
+            
+//                [self selectQuetion:[[arrDeveloper objectAtIndex:0] name] strid:[[arrDeveloper objectAtIndex:0] idstr]];
+            
+        }
+            
+        default:
+            break;
+    }
     
 }
 
@@ -42,40 +93,8 @@
     NSLog(@"jsonData=%@",jsonData);
     
     switch (request) {
+        
         case request1:
-        {
-            if ([jsonData isKindOfClass:[NSArray class]])
-            {
-                if (!sections)
-                {
-                    sections = [[NSMutableArray alloc]init];
-                }else
-                {
-                    [sections removeAllObjects];
-                }
-                
-                for (int i = 0; i<[jsonData count]; i++)
-                {
-                    nFlateViewDataClass *dataObj = [[nFlateViewDataClass alloc]init];
-                    
-                    
-                    if (![[[jsonData objectAtIndex:i] valueForKey:@"index"] isKindOfClass:[NSNull class]])
-                    {
-                        dataObj.strTitle = [[jsonData objectAtIndex:i] valueForKey:@"index"];
-                        
-                    }
-                    
-                    if (![[[jsonData objectAtIndex:i] valueForKey:@"title"] isKindOfClass:[NSNull class]])
-                    {
-                        dataObj.strValue = [[jsonData objectAtIndex:i] valueForKey:@"title"];
-                    }
-                    [sections addObject:dataObj];
-                }
-                [viewCollection reloadData];
-            }
-        }
-            break;
-        case request2:
         {
             if (!arrDeveloper)
             {
@@ -103,8 +122,9 @@
                 [arrDeveloper addObject:objDeveloper];
                 
             }
+            NSDictionary *dictVDataList=[[NSDictionary alloc]initWithObjectsAndKeys:arrDeveloper,[nFlateAppDelegate sharedAppDelegate].userID  , nil];
+            [objcoreData saveDataList:dictVDataList];
             [[nFlateAppDelegate sharedAppDelegate] removeLoadingView];
-            
             //attaching default first_view
             if([arrDeveloper count]!=0)
             {
@@ -114,7 +134,7 @@
         }
             break;
             
-        case request3:
+        case request2:
         {
             if ([jsonData isKindOfClass:[NSDictionary class]])
             {
@@ -165,6 +185,12 @@
                         }
                     }
                 }
+                if (![[jsonData valueForKey:@"View_ID"] isKindOfClass:[NSNull class]]) {
+                    NSDictionary *coreDataDict=[[NSDictionary alloc]initWithObjectsAndKeys:sections,[NSString stringWithFormat:@"%@&%@",[nFlateAppDelegate sharedAppDelegate].userID,[jsonData valueForKey:@"View_ID"]], nil] ;
+                    CoreDataClass *objCoreData=[[CoreDataClass alloc]init];
+                    [objCoreData saveData:coreDataDict];
+                }
+               
                 [[nFlateAppDelegate sharedAppDelegate] removeLoadingView];
                 
                 [viewCollection reloadData];
@@ -180,22 +206,30 @@
 
 }
 
--(void)request2:(NSString *)postParameter
+-(void)requestpost:(NSString *)postParameter  array:(NSMutableArray*)arr
 {
     [[nFlateAppDelegate sharedAppDelegate] addloadingView];
     Request *req=[[Request alloc]init];
     req.delegate=self;
-    switch (request) {
+    switch (request)
+    {
+        case request1:
+        {
+            NSDictionary *dict=@{@"dID": [nFlateAppDelegate sharedAppDelegate].userID};
+            [req postRequest:dict url:GETVIEWLISTURL];
+        }
+            break;
         case request2:
         {
-            NSString  *postParam = [NSString stringWithFormat:@"dID=araju@hunka.in"];
-            [req postRequest:postParam url:BASEURL];
+            
+            NSDictionary *dict=@{@"dID": [nFlateAppDelegate sharedAppDelegate].userID,@"View_ID":postParameter};
+            [req postRequest:dict url:GETVIEWURL];
         }
             break;
         case request3:
         {
-            NSString  *postParam = [NSString stringWithFormat:@"dID=araju@hunka.in&View_ID=%@",postParameter];
-            [req postRequest:postParam url:GETVIEWURL];
+             NSDictionary *dict=@{@"dID": [nFlateAppDelegate sharedAppDelegate].userID,@"View_Name":self.lblTable1.text,@"View_ID":postParameter};
+             [req postRequest:dict url:SAVEURL];
         }
         default:
             break;
@@ -402,11 +436,27 @@
     [self hideTableView];
     
     NSString *strView = @"";
-    
+     NSMutableArray *arrupdateView=[[NSMutableArray alloc]init];
     for (int i =0; i<[sections count]; i++)
     {
-        strView = [strView stringByAppendingString:[NSString stringWithFormat:@"%@",[sections objectAtIndex:i]]];
+        
+        ViewDataClass *objViewData=[sections objectAtIndex:i];
+       
+        NSDictionary *dictD=[[NSDictionary alloc]initWithObjectsAndKeys:objViewData.title,@"Title",objViewData.value,@"Value", nil];
+        NSLog(@"dictD=%@",dictD);
+        NSDictionary *dictG=[[NSDictionary alloc]initWithObjectsAndKeys:objViewData.gameID,@"game_id",objViewData.matrixID,@"matrix_id", nil];
+        NSLog(@"dictG=%@",dictG);
+        NSDictionary *dict=[[NSDictionary alloc]initWithObjectsAndKeys:dictD,@"D",dictG,@"G", nil];
+        NSLog(@"dict=%@",dict);
+        [arrupdateView addObject:dict];
+        
+        
+        //strView = [strView stringByAppendingString:[NSString
+                                                   // stringWithFormat:@"%@",[sections objectAtIndex:i]]];
     }
+    NSLog(@"arrupdateView=%@",arrupdateView);
+    request=request3;
+    [self requestpost:listselectID array:arrupdateView];
 }
 
 - (void)viewDidLoad
@@ -415,15 +465,15 @@
     
     self.lbluserID.text=[nFlateAppDelegate sharedAppDelegate].userID;
     self.arrGameList=[[NSMutableArray alloc] init];
-    
+    objcoreData=[[CoreDataClass alloc]init];
     //TapGesture for handle touch outside of tableListVie
     UITapGestureRecognizer *singleFingerTap =
     [[UITapGestureRecognizer alloc] initWithTarget:self
                                             action:@selector(handleSingleTap:)];
     [viewCollection addGestureRecognizer:singleFingerTap];
     [self hideTableView];
-    request = request2;
-    [self request2:nil];
+    request = request1;
+    [self requestpost:Nil array:nil];
 }
 
 /**
@@ -537,8 +587,9 @@
         {
             [arrGameList removeAllObjects];
             self.lblTable1.text=strName;
-            request=request3;
-            [self request2:strid];
+            request=request2;
+            listselectID=[NSString stringWithFormat:@"%@",strid];
+            [self requestpost:strid array:nil];
         }
             break;
         case table2:

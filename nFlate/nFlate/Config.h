@@ -11,7 +11,6 @@
 //#define TESTING_APPLICATION NO
 
 //#define SERVER_DOMAIN @"http://www.CatList.php?"
-#define SERVER_DOMAIN @"http://www.appfoster.com/webservices/init?"
 
 #define FONT_11 [UIFont fontWithName:@"Qlassik Bold" size:11.0f]
 #define FONT_12 [UIFont fontWithName:@"Qlassik Bold" size:12.0f]
@@ -38,10 +37,17 @@
 #define FONT_55 [UIFont fontWithName:@"Qlassik Bold" size:55.0f]
 
 #define FONT_ARIAL_BOLD_12 [UIFont fontWithName:@"Bold" size:12.0f]
-#define BASEURL @"http://192.168.0.110:8888/nFlate_PHP/getViewList.php?"
 
-#define GETVIEWURL @"http://192.168.0.110:8888/nFlate_PHP/getView_Data.php"
-#define LOGINURL @"http://192.168.0.110:8888/nFlate_PHP/nfLogin.php?"
+//#define BASEURL @"http://hwsdemos.com/nFlateWeb/getViewList.php?"
+//#define GETVIEWURL @"http://hwsdemos.com/nFlateWeb/getView_Data.php"
+//#define LOGINURL @"http://hwsdemos.com/nFlateWeb/nfLogin.php?"
+
+
+#define BASEURL @"http://hwsdemos.com/nFlateWeb/"
+#define GETVIEWLISTURL @"getViewList.php?"
+#define GETVIEWURL @"getView_Data.php"
+#define LOGINURL @"nfLogin.php?"
+#define SAVEURL @"createView.php"
 
 
 

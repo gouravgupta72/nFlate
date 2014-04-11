@@ -10,4 +10,23 @@
 
 @implementation ViewDataClass
 @synthesize gameID,matrixID,value,title;
+
+- (id)initWithCoder:(NSCoder *)decoder {
+    if (self = [super init]) {
+        self.gameID = [decoder decodeObjectForKey:@"gameID"];
+        self.matrixID = [decoder decodeObjectForKey:@"matrixID"];
+        self.value = [decoder decodeObjectForKey:@"value"];
+        self.title = [decoder decodeObjectForKey:@"title"];
+
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    [encoder encodeObject:gameID forKey:@"gameID"];
+    [encoder encodeObject:matrixID forKey:@"matrixID"];
+    [encoder encodeObject:value forKey:@"value"];
+    [encoder encodeObject:title forKey:@"title"];
+    
+}
 @end

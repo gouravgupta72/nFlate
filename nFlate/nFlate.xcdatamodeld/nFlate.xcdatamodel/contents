@@ -7,13 +7,33 @@
         <attribute name="dict" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="key" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Key" inverseName="data" inverseEntity="Key" syncable="YES"/>
     </entity>
+    <entity name="GameData" representedClassName="GameData" syncable="YES">
+        <attribute name="gameDataArr" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="gameID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GameID" inverseName="gameData" inverseEntity="GameID" syncable="YES"/>
+    </entity>
+    <entity name="GameID" representedClassName="GameID" syncable="YES">
+        <attribute name="gameIdKey" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="gameData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GameData" inverseName="gameID" inverseEntity="GameData" syncable="YES"/>
+    </entity>
     <entity name="Key" representedClassName="Key" syncable="YES">
         <attribute name="key" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="data" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Data" inverseName="key" inverseEntity="Data" syncable="YES"/>
+    </entity>
+    <entity name="ListData" representedClassName="ListData" syncable="YES">
+        <attribute name="listarr" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="listID" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListID" inverseName="listData" inverseEntity="ListID" syncable="YES"/>
+    </entity>
+    <entity name="ListID" representedClassName="ListID" syncable="YES">
+        <attribute name="listIDkey" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="listData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ListData" inverseName="listID" inverseEntity="ListData" syncable="YES"/>
     </entity>
     <elements>
         <element name="BackUp" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Data" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Key" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="ListData" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="ListID" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="GameID" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="GameData" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

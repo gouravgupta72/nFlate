@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DeveloperDataClass : NSObject
+@interface DeveloperDataClass : NSObject<NSCoding>
 {
     NSString *idStr,*name;
 }
